@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                    http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+	<context:load-time-weaver />
+	<!-- ========================= RTAE ========================= -->
+	<!-- <jee:jndi-lookup id="dataSource" jndi-name="persistence/rtae"/> -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/gen" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+<!-- 	   <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> -->		
+<!-- 	   <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> -->
+<!--       <property name="javax.persistence.jdbc.url"    value="jdbc:postgresql://host:port/database" /> -->
+<!--       <property name="javax.persistence.jdbc.user" value="username" /> -->
+<!--       <property name="javax.persistence.jdbc.password" value="password" /> -->
+<!--       <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> -->
+<!--       <property name="show_sql" value="true"/> -->
+	</bean>
+
+	<bean id="eventTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="eventEntityManagerFactory" />
+	</bean>
+
+	<bean id="eventEntityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="event" />
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean
+				class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter">
+				<property name="databasePlatform"
+					value="org.hibernate.dialect.MySQLDialect" />
+				<property name="database" value="MYSQL" />
+				<property name="generateDdl" value="false" />
+				<property name="showSql" value="true" />
+			</bean>
+		</property>
+		
+	</bean>
+
+</beans>
