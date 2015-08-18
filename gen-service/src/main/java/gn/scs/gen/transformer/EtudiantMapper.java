@@ -3,6 +3,9 @@
  */
 package gn.scs.gen.transformer;
 
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
 import gn.scs.gen.dto.etudiant.EtudiantDTO;
 import gn.scs.gen.dto.etudiant.InscriptionDTO;
 import gn.scs.gen.model.Etudiant;
@@ -13,6 +16,8 @@ import gn.scs.gen.model.Etudiant;
  * @author fcamara
  *
  */
+@Transactional
+@Component
 public class EtudiantMapper implements Mapper<Etudiant,EtudiantDTO>{
 
 	@Override

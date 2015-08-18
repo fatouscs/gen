@@ -3,6 +3,9 @@
  */
 package gn.scs.gen.service.etudiant;
 
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
 import gn.scs.gen.dto.etudiant.EtudiantDTO;
 
 /**
@@ -11,6 +14,8 @@ import gn.scs.gen.dto.etudiant.EtudiantDTO;
  * @author fcamara
  *
  */
+@Transactional
+@Component
 public class RechercheEtudiantSMImpl implements RechercheEtudiantSM {
 
 	/* (non-Javadoc)
