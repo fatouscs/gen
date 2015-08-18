@@ -14,8 +14,9 @@
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 
 	<!-- Fichier de configuration -->
-	<!-- <import resource="application-aop.xml" /> -->
+
 	<import resource="spring/application-transaction.xml" />
+	<!-- <import resource="application-aop.xml" /> -->
 	<!-- <import resource="application-properties.xml" /> -->
 
 	<cxf:bus>
