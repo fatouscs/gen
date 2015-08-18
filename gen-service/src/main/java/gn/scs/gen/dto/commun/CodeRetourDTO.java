@@ -8,9 +8,19 @@ public class CodeRetourDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = -8720353496900873800L;
+	/**
+	 * 
+	 * @param code
+	 * @param libelle
+	 */
+	public CodeRetourDTO(String code, String libelle) {
+		super();
+		this.code = code;
+		this.libelle = libelle;
+	}
 
 	private String code;
-	
+
 	private String libelle;
 
 	/**
@@ -40,6 +50,6 @@ public class CodeRetourDTO implements Serializable {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	
-	
+
+
 }

@@ -4,8 +4,10 @@
 package gn.scs.gen.impl;
 
 import gn.scs.gen.dto.etudiant.AjoutEtudiantReponse;
-import gn.scs.gen.dto.etudiant.AjoutEtudiantRequete;
+import gn.scs.gen.dto.etudiant.EtudiantDTO;
+import gn.scs.gen.dto.etudiant.InscriptionDTO;
 import gn.scs.gen.service.etudiant.AjoutEtudiantSM;
+import gn.scs.gen.utils.TechnicalException;
 
 /**
  * @author Fatou Camara
@@ -14,10 +16,35 @@ import gn.scs.gen.service.etudiant.AjoutEtudiantSM;
 public class EtudiantServiceImpl implements EtudiantService {
 
 	private AjoutEtudiantSM ajoutEtudiantSM;
-	
-	public AjoutEtudiantReponse addExposant(AjoutEtudiantRequete request) {
+	/**
+	 * Méthode d'ajout d'un nouvel étudiant
+	 * @param request
+	 * 	Informations de l'étudiant
+	 * @return Etudiant crée
+	 * @throws TechnicalException 
+	 */
+	@Override
+	public AjoutEtudiantReponse ajoutEtudiant(EtudiantDTO request) throws TechnicalException {
 		// TODO Auto-generated method stub
-		return null;
+		return ajoutEtudiantSM.ajoutEtudiant(request);
 	}
+
+	/**
+	 * 
+	 * Méthode d'ajout d'un nouvel étudiant suite à une inscription
+	 * @param request
+	 * 	Informations de l'étudiant
+	 * @param demande
+	 * 	Demande d'inscriptipon
+	 * @return Etudiant crée
+	 * @throws TechnicalException 
+	 */
+	@Override
+	public AjoutEtudiantReponse inscriptionEtudiant(InscriptionDTO demande) throws TechnicalException {
+		// TODO Auto-generated method stub
+		return ajoutEtudiantSM.inscriptionEtudiant(demande);
+	}
+	
+
 
 }
