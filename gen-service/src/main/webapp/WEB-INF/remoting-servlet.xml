@@ -20,7 +20,7 @@
 
 	<!-- Scan toutes les annotations Spring et fait l'IOC -->
 	<context:annotation-config />
-	<context:component-scan base-package="com.socgen.sgae" />
+	<context:component-scan base-package="gn.scs.gen" />
 
 	<import resource="spring/application-transaction.xml" />
 	<!-- <import resource="application-aop.xml" /> -->

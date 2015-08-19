@@ -19,9 +19,11 @@ import gn.scs.gen.utils.TechnicalException;
 @Transactional
 @Component
 public class AjoutEtudiantSMImpl implements AjoutEtudiantSM {
-
+	
 	private EtudiantMapper etudiantTransformer;
+		
 	private RechercheEtudiantSM rechercheEtudiant;
+		
 	private EtudiantDao etudiantDao;
 
 	@Override

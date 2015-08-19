@@ -22,7 +22,7 @@ public class Inscription implements Serializable{
 	
 	
 	@Id
-	@Column(name="IdEtudiant")
+	@Column(name="Idinscription")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="INSCRIPTIONID_gen")
 	@SequenceGenerator(name="INSCRIPTIONID_gen" , sequenceName="gen.INSCRIPTION_SEQ", allocationSize=1)
 	private Long idInscription;

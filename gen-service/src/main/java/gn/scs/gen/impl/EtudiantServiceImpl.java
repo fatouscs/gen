@@ -3,6 +3,8 @@
  */
 package gn.scs.gen.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import gn.scs.gen.dto.etudiant.AjoutEtudiantReponse;
 import gn.scs.gen.dto.etudiant.EtudiantDTO;
 import gn.scs.gen.dto.etudiant.InscriptionDTO;
@@ -14,7 +16,8 @@ import gn.scs.gen.utils.TechnicalException;
  *
  */
 public class EtudiantServiceImpl implements EtudiantService {
-
+	
+	@Autowired
 	private AjoutEtudiantSM ajoutEtudiantSM;
 	/**
 	 * Méthode d'ajout d'un nouvel étudiant

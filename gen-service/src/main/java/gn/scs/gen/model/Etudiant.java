@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="ETUDIANT",schema="gen")
@@ -20,46 +22,47 @@ public class Etudiant implements Serializable {
 	 */
 	private static final long serialVersionUID = -4127733034453530614L;
 
-	
+
 	@Id
-	@Column(name="IdEtudiant")
+	@Column(name="Idetudiant")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ETUDIANTID_gen")
 	@SequenceGenerator(name="ETUDIANTID_gen" , sequenceName="gen.ETUDIANT_SEQ", allocationSize=1)
 	private Long idEtudiant;
-	
+
 	@Column(name="STATUS")
 	private String matricule;
-	
+
 	@Column(name="nom")
 	private String nom;
-	
+
 	@Column(name="prenom")
 	private String prenom;
-	
+
 	@Column(name="sexe")
 	private String sexe;
-	
+
 	@Column(name="date_naissance")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date dateNaissance;
-	
+
 	@Column(name="adresse")
 	private String adresse;
-	
+
 	@Column(name="email")
 	private String email;
-	
+
 	@Column(name="tuteur")
 	private String tuteur;
-	
+
 	@Column(name="telephone")
 	private String telephone;
-	
+
 	@Column(name="telephone_tuteur")
 	private String telephoneTuteur;
-	
+
 	@Column(name="nationalite")
 	private String nationalite;
-	
+
 	@Column(name="situation_matrimoniale")
 	private String situationMatrimoniale;
 
@@ -244,6 +247,6 @@ public class Etudiant implements Serializable {
 	public void setSituationMatrimoniale(String situationMatrimoniale) {
 		this.situationMatrimoniale = situationMatrimoniale;
 	}
-	
-	
+
+
 }
