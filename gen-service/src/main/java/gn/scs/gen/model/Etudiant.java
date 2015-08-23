@@ -29,7 +29,7 @@ public class Etudiant implements Serializable {
 	@SequenceGenerator(name="ETUDIANTID_gen" , sequenceName="gen.ETUDIANT_SEQ", allocationSize=1)
 	private Long idEtudiant;
 
-	@Column(name="STATUS")
+	@Column(name="matricule")
 	private String matricule;
 
 	@Column(name="nom")

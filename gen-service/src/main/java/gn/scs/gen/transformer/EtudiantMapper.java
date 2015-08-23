@@ -16,8 +16,6 @@ import gn.scs.gen.model.Etudiant;
  * @author fcamara
  *
  */
-@Transactional
-@Component
 public class EtudiantMapper implements Mapper<Etudiant,EtudiantDTO>{
 
 	@Override

@@ -13,14 +13,13 @@
 			http://www.springframework.org/schema/context
 			http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<!-- Fichier de configuration -->
+	
+	<!-- Scan toutes les annotations Spring et fait l'IOC -->
+	<context:component-scan base-package="gn.scs.gen" />
+	
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
-
-	<!-- Fichier de configuration -->
-
-	<!-- Scan toutes les annotations Spring et fait l'IOC -->
-	<context:annotation-config />
-	<context:component-scan base-package="gn.scs.gen" />
 
 	<import resource="spring/application-transaction.xml" />
 	<!-- <import resource="application-aop.xml" /> -->
@@ -32,7 +31,7 @@
 		</cxf:features>
 	</cxf:bus>
 
-	<jaxrs:server id="eventServiceREST" address="/EtudiantService">
+	<jaxrs:server id="etudiantServiceREST" address="/EtudiantService">
 		<jaxrs:serviceBeans>
 			<ref bean="etudiantService" />
 		</jaxrs:serviceBeans>

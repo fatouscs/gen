@@ -32,6 +32,7 @@ public class EtudiantDaoImpl  extends CrudRepositoryImpl<Etudiant> implements Et
 			etu = (Etudiant) query.getSingleResult();
 
 		} catch(NoResultException e) {
+			
 			//Pas de résultat
 		}
 		return etu;
