@@ -43,7 +43,7 @@ public class AjoutEtudiantSMImpl implements AjoutEtudiantSM {
 			//Création de l'étudiant en base
 			Etudiant studentCreated=etudiantDao.persist(studentToCreate);
 
-			//Transaformation de studentCreated=>etudiant
+			//Transformation de studentCreated=>etudiant
 			etudiantCree=	etudiantTransformer.map(studentCreated);
 			retour=new CodeRetourDTO("000","Operation reussie");
 		}else{
