@@ -6,7 +6,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import gn.scs.gen.dao.EtudiantDao;
 import gn.scs.gen.dto.commun.CodeRetourDTO;
-import gn.scs.gen.dto.commun.ServiceReference;
 import gn.scs.gen.dto.etudiant.AjoutEtudiantReponse;
 import gn.scs.gen.dto.etudiant.EtudiantDTO;
 import gn.scs.gen.dto.etudiant.InscriptionDTO;
