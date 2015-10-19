@@ -1,7 +1,13 @@
 package gn.scs.gen.model;
 
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 @Entity
 @Table(name="FACULTE",schema="gen")
@@ -13,13 +19,19 @@ public class Faculte implements Serializable{
 	 */
 	private static final long serialVersionUID = -882476521476978108L;
 	
-	private int idFaculte;
+	@Id
+	@Column(name="Idetudiant")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FACULTEID_gen")
+	@SequenceGenerator(name="FACULTEID_gen" , sequenceName="gen.FACULTE_SEQ", allocationSize=1)
+	private long idFaculte;
+	
+	@Column(name="libelle")
 	private String libelle;
 	
-	public int getIdFaculte(){
+	public long getIdFaculte(){
 		return this.idFaculte;	
 	}
-	public void setIdfaculte(int idFaculte){
+	public void setIdfaculte(long idFaculte){
 		this.idFaculte=idFaculte;
 	}
 	

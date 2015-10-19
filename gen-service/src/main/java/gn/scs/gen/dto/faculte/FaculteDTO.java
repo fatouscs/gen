@@ -9,13 +9,13 @@ public class FaculteDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = -6520749570982488134L;
 	
-	private int idFaculte;
+	private long idFaculte;
 	private String libelle;
 	
-	public int getIdFaculte(){
+	public long getIdFaculte(){
 		return this.idFaculte;	
 	}
-	public void setIdfaculte(int idFaculte){
+	public void setIdfaculte(long idFaculte){
 		this.idFaculte=idFaculte;
 	}
 	
